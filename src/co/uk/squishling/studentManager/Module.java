@@ -29,9 +29,14 @@ public class Module {
 	
 	// Views students in the students ArrayList, with their index, and other details specified in the Student class
 	public void viewStudents() {
-		for (int i = 0; i < students.size(); i++) {
-			// Prints information
-			System.out.println(i + " | " + students.get(i));
+		// Message if there are no students so that a user doesn't wonder why nothing happened when they viewed all of the students
+		if (students.size() == 0) {
+			System.out.println("There are currently no students to view at this time.");
+		} else {
+			for (int i = 0; i < students.size(); i++) {
+				// Prints information
+				System.out.println(i + " | " + students.get(i));
+			}
 		}
 	}
 	
