@@ -17,13 +17,11 @@ public class Student {
 	
 	// Adds the specified grade (from 1 to 9) to the grades ArrayList
 	public void addGrade(Integer grade) {
-		// Adds the grade
 		grades.add(grade);
 	}
 	
-	// Gets the students grades
+	// Gets the student's grades
 	public ArrayList<Integer> getGrades() {
-		// Returns the grades ArrayList
 		return grades;
 	}
 	

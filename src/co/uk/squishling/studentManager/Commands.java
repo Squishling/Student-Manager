@@ -52,14 +52,14 @@ public class Commands {
 		System.out.println("How old is " + inAddName + "?");
 		int inAddAge = input.nextInt();
 		
-		// Adds students and views all students
+		// Adds student and views all students
 		module.addStudent(inAddName, inAddAge);
 		module.viewStudents();
 	}
 	
 	// Remove student command method
 	public void remove() {
-		// Vie students
+		// View students
 		module.viewStudents();
 		
 		// Asks for student index
