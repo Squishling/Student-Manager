@@ -1,8 +1,11 @@
 package co.uk.squishling.studentManager;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Student {
+public class Student implements Serializable {
+	
+	private static final long serialVersionUID = -441433908272758221L;
 	
 	// Creates name, age and grades variables
 	private String name;

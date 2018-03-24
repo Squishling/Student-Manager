@@ -27,6 +27,11 @@ public class Module {
 		return students;
 	}
 	
+	// Sets the students ArrayList to the new provided students ArrayList
+	public void setStudents(ArrayList<Student> students) {
+		this.students = students;
+	}
+	
 	// Views students in the students ArrayList, with their index, and other details specified in the Student class
 	public void viewStudents() {
 		// Message if there are no students so that a user doesn't wonder why nothing happened when they viewed all of the students

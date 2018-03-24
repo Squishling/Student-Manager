@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Commands {
 	
 	// Variables
+	private FileData fileData = new FileData();
 	private Module module = new Module();
 	Scanner input = new Scanner(System.in);
 	
@@ -12,8 +13,18 @@ public class Commands {
 	public void interact() {
 		while (true) {
 			// Asks for command
-			System.out.println("Please specify an action.\nview | add | remove | add_grade | best");
+			System.out.println("Please specify an action.\nsave | load | view | add | remove | add_grade | best");
 			String in = input.nextLine();
+			
+			// If save...
+			if (in.equals("save")) {
+				fileData.save(module.getStudents());
+			}
+			
+			// If load...
+			if (in.equals("load")) {
+				load();
+			}
 			
 			// If view...
 			if (in.equals("view")) {
@@ -102,6 +113,18 @@ public class Commands {
 		} else {
 			// Error message
 			System.out.println("Please enter an index in the range of students.");
+		}
+	}
+	
+	// Load command method
+	public void load() {
+		// If a file is returned...
+		if (fileData.load() != null) {
+			// Load students
+			module.setStudents(fileData.load());
+		} else {
+			// Error message
+			System.out.println("Could not load students.");
 		}
 	}
 	
