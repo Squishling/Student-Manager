@@ -25,7 +25,7 @@ public class FileData {
 		}
 	}
 	
-	// Suppress unchecked warnings (I would only get an error if the students file was externally edited
+	// Suppress unchecked warnings (I would only get an error if the students file was externally edited)
 	@SuppressWarnings("unchecked")
 	// Load students from file
 	public ArrayList<Student> load() {
