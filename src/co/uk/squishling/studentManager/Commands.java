@@ -18,7 +18,7 @@ public class Commands {
 			
 			// If save...
 			if (in.equals("save")) {
-				fileData.save(module.getStudents());
+				save();
 			}
 			
 			// If load...
@@ -116,12 +116,24 @@ public class Commands {
 		}
 	}
 	
+	// Save command method
+	public void save() {
+		// Save message
+		System.out.println("Saved students to file.");
+		
+		fileData.save(module.getStudents());
+	}
+	
 	// Load command method
 	public void load() {
 		// If a file is returned...
 		if (fileData.load() != null) {
 			// Load students
 			module.setStudents(fileData.load());
+			
+			// Load messages
+			System.out.println("Loaded students from file.");
+			module.viewStudents();
 		} else {
 			// Error message
 			System.out.println("Could not load students.");
