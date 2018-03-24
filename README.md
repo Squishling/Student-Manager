@@ -11,13 +11,13 @@ Remove students with the `remove` command.  Requires index of student to delete 
 View all students with the `view` command.
 
 ### Add Grades
-Add a grade (numbers 1-9) to a specific student.  Requires index of student to add grade to (indexs of all students are shown when you run the remove command).
+Add a grade (numbers 1-9) to a specific student with the `add_grade` command.  Requires index of student to add grade to (indexs of all students are shown when you run the remove command).
 
 ### Save
-Save all students to a file (called `students`).
+Save all students to a file (called `students`) with the `save` command.
 
 ### Load
-Load all students from a file (called `students`).
+Load all students from a file (called `students`) with the `load` command.
 
 ## Download
 Download link (squishling.co.uk): [Download](http://downloads.squishling.co.uk/Student%20Manager.zip)
