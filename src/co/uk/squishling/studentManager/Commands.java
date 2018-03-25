@@ -82,6 +82,7 @@ public class Commands {
 		// Asks for age
 		System.out.println("How old is " + inAddName + "?");
 		int inAddAge = input.nextInt();
+		input.nextLine();
 		
 		// Adds student and views all students
 		module.addStudent(inAddName, inAddAge);
@@ -90,6 +91,9 @@ public class Commands {
 	
 	// Edit name command method
 	public void editNameCmd() {
+		// Views students
+		module.viewStudents();
+		
 		// Asks for a student index
 		System.out.println("What is the index of the student whoose name you want to edit? (the number displayed on the far left)");
 		int inEditNameIndex = input.nextInt();
@@ -112,6 +116,9 @@ public class Commands {
 	}
 	
 	public void editAge() {
+		// Views students
+		module.viewStudents();
+		
 		// Asks for a student index
 		System.out.println("What is is the index of the student you want to edit its age? (the number displayed on the far left)");
 		int inEditAgeIndex = input.nextInt();
@@ -125,6 +132,7 @@ public class Commands {
 			
 			// Changes the age
 			module.getStudent(inEditAgeIndex).editAge(inEditAgeAge);
+			module.viewStudents();
 		} else {
 			// Error message
 			System.out.println("Please enter an index in the range of students.");
@@ -146,6 +154,7 @@ public class Commands {
 		if (inRemoveIndex > -1 && inRemoveIndex < module.getStudents().size()) {
 			// Removes the student
 			module.removeStudent(inRemoveIndex);
+			module.viewStudents();
 		} else {
 			// Error message
 			System.out.println("Please enter an index in the range of students.");
@@ -172,6 +181,7 @@ public class Commands {
 			if (inAddGradeGrade > 0 && inAddGradeGrade < 10) {
 				// Adds the grade
 				module.getStudent(inAddGradeIndex).addGrade(inAddGradeGrade);
+				module.viewStudents();
 			} else {
 				// Error message
 				System.out.println("Please enter an integer between one and nine.");
@@ -210,6 +220,7 @@ public class Commands {
 				if (inEditGradeGrade > 0 && inEditGradeGrade < 10) {
 					// Edits the grade
 					module.getStudent(inEditGradeIndex).editGrade(inEditGradeGradeIndex, inEditGradeGrade);
+					module.viewStudents();
 				} else {
 					// Error message
 					System.out.println("Please enter an integer between one and nine.");
@@ -235,6 +246,9 @@ public class Commands {
 		
 		// Checks if the student index is within the right range
 		if (inRemoveGradeIndex > -1 && inRemoveGradeIndex < module.getStudents().size()) {
+			// Views the student's grades
+			module.getStudent(inRemoveGradeIndex).viewGrades();
+			
 			// Asks for a grade index
 			System.out.println("What is is the index the grade you want to remove? (the number displayed on the far left)");
 			int inRemoveGradeGradeIndex = input.nextInt();
@@ -244,6 +258,7 @@ public class Commands {
 			if (inRemoveGradeGradeIndex > -1 && inRemoveGradeGradeIndex < module.getStudent(inRemoveGradeIndex).getGrades().size()) {
 				// Removes the grade
 				module.getStudent(inRemoveGradeIndex).removeGrade(inRemoveGradeGradeIndex);
+				module.viewStudents();
 			} else {
 				// Error message
 				System.out.println("Please enter an index in the range of grades.");
