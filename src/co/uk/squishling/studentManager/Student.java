@@ -44,16 +44,37 @@ public class Student implements Serializable {
 		grades.remove(index);
 	}
 	
+	public float averageGrade() {
+		int averageGrade = 0;
+		
+		// Checks if the student does in fact have grades to avoid an error from dividing by zero
+		if (grades.size() > 0) {
+			for (int j = 0; j < grades.size(); j++) {
+				averageGrade += grades.get(j);
+			}
+			
+			averageGrade = averageGrade / grades.size();
+		}
+		
+		return averageGrade;
+	}
+	
 	// Gets the student's grades
 	public ArrayList<Integer> getGrades() {
 		return grades;
 	}
 	
 	// Prints out grade information
-	public void viewGrades() {
+	public String viewGrades() {
+		String gradesString = "Grades of " + name + ":\n";
+		
 		for (int i = 0; i < grades.size(); i++) {
-			System.out.println(i + " | Grade: " + grades.get(i));
+//			System.out.println(i + " | Grade: " + grades.get(i));
+			
+			gradesString += i + " | Grade: " + grades.get(i) + "\n";
 		}
+		
+		return gradesString;
 	}
 	
 	// toString method that prints out information about the student

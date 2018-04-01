@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class FileData {
 	
 	// Save students to a file
-	public void save(ArrayList<Student> students) {
+	public void save(StudentList students) {
 		// Try/catch in case of errors (suggested by Eclipse)
 		try {
 			// Creating file out and object out
@@ -25,10 +25,8 @@ public class FileData {
 		}
 	}
 	
-	// Suppress unchecked warnings (I would only get an error if the students file was externally edited)
-	@SuppressWarnings("unchecked")
 	// Load students from file
-	public ArrayList<Student> load() {
+	public StudentList load() {
 		// Try/catch in case of errors (suggested by Eclipse)
 		try {
 			// Tests if the students file exists
@@ -38,7 +36,7 @@ public class FileData {
 				FileInputStream fileIn = new FileInputStream("students");
 				ObjectInputStream objectIn = new ObjectInputStream(fileIn);
 				// Creating students ArrayList from object in and closing object in
-				ArrayList<Student> students = (ArrayList<Student>) objectIn.readObject();
+				StudentList students = (StudentList) objectIn.readObject();
 				objectIn.close();
 				
 				// Returning students ArrayList
