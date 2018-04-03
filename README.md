@@ -31,5 +31,11 @@ Save all students to a file (called `students`) with the `save` command.
 ### Load
 Load all students from a file (called `students`) with the `load` command.
 
+### Load from CSV File
+Load all students from a specified CSV file with the `load_csv` command.
+
+## Sort
+Sort students by name (mode 1) or average grade (mode 2) with the `sort` command.
+
 ## Download
 Download link (squishling.co.uk): [Download](http://downloads.squishling.co.uk/Student%20Manager.zip)
