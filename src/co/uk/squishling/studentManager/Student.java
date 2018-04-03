@@ -2,6 +2,7 @@ package co.uk.squishling.studentManager;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Student implements Serializable {
 	
@@ -24,6 +25,11 @@ public class Student implements Serializable {
 		name = n;
 	}
 	
+	// Gets the student's name
+	public String getName() {
+		return name;
+	}
+	
 	// Changes the student's age to the new specified age
 	public void editAge(int age) {
 		this.age = age;
@@ -44,19 +50,27 @@ public class Student implements Serializable {
 		grades.remove(index);
 	}
 	
-	public float averageGrade() {
-		int averageGrade = 0;
-		
+	// Returns the student's average grade
+	public Float averageGrade() {
 		// Checks if the student does in fact have grades to avoid an error from dividing by zero
 		if (grades.size() > 0) {
+			// Variable
+			Float averageGrade = (float) 0;
+			
+			// Loops through the grades and adds them to the average variable
 			for (int j = 0; j < grades.size(); j++) {
 				averageGrade += grades.get(j);
 			}
 			
+			// Division to work out the mean
 			averageGrade = averageGrade / grades.size();
+			
+			// Returns the average grade
+			return averageGrade;
 		}
 		
-		return averageGrade;
+		// No grades...
+		return null;
 	}
 	
 	// Gets the student's grades
@@ -66,14 +80,15 @@ public class Student implements Serializable {
 	
 	// Prints out grade information
 	public String viewGrades() {
+		// Grades string
 		String gradesString = "Grades of " + name + ":\n";
 		
+		// Loops through grades and adds them to the string
 		for (int i = 0; i < grades.size(); i++) {
-//			System.out.println(i + " | Grade: " + grades.get(i));
-			
 			gradesString += i + " | Grade: " + grades.get(i) + "\n";
 		}
 		
+		// Return
 		return gradesString;
 	}
 	
