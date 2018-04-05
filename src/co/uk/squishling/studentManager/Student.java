@@ -1,6 +1,7 @@
 package co.uk.squishling.studentManager;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
 
@@ -70,7 +71,7 @@ public class Student implements Serializable {
 		}
 		
 		// No grades...
-		return null;
+		return (float) 0;
 	}
 	
 	// Gets the student's grades
@@ -94,7 +95,8 @@ public class Student implements Serializable {
 	
 	// toString method that prints out information about the student
 	public String toString() {
-		return "Name: " + name + ", Age: " + age + ", Grades: " + grades;
+		DecimalFormat df = new DecimalFormat("0.00");
+		return "Name: " + name + ", Age: " + age + ", Grades: " + grades + ", Average Grade: " + df.format(averageGrade());
 	}
 	
 }
